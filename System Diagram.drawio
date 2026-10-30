@@ -1,0 +1,130 @@
+<mxfile host="app.diagrams.net" agent="ChatGPT">
+  <diagram id="time-tracker" name="Time Tracker Flowchart">
+    <mxGraphModel dx="2965" dy="1719" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1500" pageHeight="1200" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="title" parent="1" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=24;fontStyle=1;fontColor=#1e293b;" value="Joe Benin -&lt;span style=&quot;background-color: transparent;&quot;&gt;&amp;nbsp;Python Work Hours Tracker&lt;/span&gt;" vertex="1">
+          <mxGeometry height="50" width="960" x="289" y="49.9" as="geometry" />
+        </mxCell>
+        <mxCell id="repo" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e0e7ff;strokeColor=#6366f1;fontSize=14;align=center;" value="GitHub Repository&lt;br&gt;main.py  |  data.csv  |  README.md" vertex="1">
+          <mxGeometry height="65" width="440" x="542" y="157" as="geometry" />
+        </mxCell>
+        <mxCell id="start" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;fontStyle=1;fontSize=15;" value="START&#xa;Run main.py" vertex="1">
+          <mxGeometry height="65" width="190" x="667" y="252" as="geometry" />
+        </mxCell>
+        <mxCell id="menu" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;fontSize=14;" value="Display Menu&#xa;Clock In / Clock Out / View Summary / Exit" vertex="1">
+          <mxGeometry height="70" width="380" x="572" y="352" as="geometry" />
+        </mxCell>
+        <mxCell id="choice" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#d97706;fontStyle=1;" value="User choice?" vertex="1">
+          <mxGeometry height="105" width="210" x="657" y="457" as="geometry" />
+        </mxCell>
+        <mxCell id="in" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;fontSize=14;" value="clock_in()&#xa;Request clock-in" vertex="1">
+          <mxGeometry height="70" width="230" x="132" y="622" as="geometry" />
+        </mxCell>
+        <mxCell id="out" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;fontSize=14;" value="clock_out()&#xa;Request clock-out" vertex="1">
+          <mxGeometry height="70" width="230" x="432" y="622" as="geometry" />
+        </mxCell>
+        <mxCell id="summary" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dbeafe;strokeColor=#2563eb;fontSize=14;" value="view_summary()&lt;br&gt;Read completed sessions; calculate total hours worked" vertex="1">
+          <mxGeometry height="85" width="270" x="862" y="622" as="geometry" />
+        </mxCell>
+        <mxCell id="exit" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#fee2e2;strokeColor=#dc2626;fontStyle=1;" value="END&#xa;Exit program" vertex="1">
+          <mxGeometry height="70" width="180" x="1222" y="622" as="geometry" />
+        </mxCell>
+        <mxCell id="verify" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fef3c7;strokeColor=#d97706;fontSize=13;" value="verify()&#xa;Check latest session state in data.csv" vertex="1">
+          <mxGeometry height="130" width="270" x="312" y="747" as="geometry" />
+        </mxCell>
+        <mxCell id="invalid" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fee2e2;strokeColor=#dc2626;fontSize=13;" value="Invalid action&#xa;Already clocked in / already clocked out&#xa;Show error; do not write" vertex="1">
+          <mxGeometry height="80" width="260" x="107" y="922" as="geometry" />
+        </mxCell>
+        <mxCell id="timestamp" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;fontSize=14;" value="Valid action&#xa;Get current date &amp; time&#xa;Append IN or OUT event to log" vertex="1">
+          <mxGeometry height="80" width="270" x="437" y="922" as="geometry" />
+        </mxCell>
+        <mxCell id="csv" parent="1" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#f1f5f9;strokeColor=#64748b;fontSize=14;" value="data.csv - Persistent Storage&lt;br&gt;Event log: date, time, action (IN/OUT)&lt;br&gt;Summary table: date, total hours worked" vertex="1">
+          <mxGeometry height="125" width="310" x="872" y="847" as="geometry" />
+        </mxCell>
+        <mxCell id="show" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dcfce7;strokeColor=#16a34a;fontSize=14;" value="Display total hours&#xa;and updated summary" vertex="1">
+          <mxGeometry height="70" width="230" x="912" y="1042" as="geometry" />
+        </mxCell>
+        <mxCell id="e1" edge="1" parent="1" source="repo" style="endArrow=block;html=1;strokeColor=#64748b;" target="start">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" edge="1" parent="1" source="start" style="endArrow=block;html=1;" target="menu">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" edge="1" parent="1" source="menu" style="endArrow=block;html=1;" target="choice">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" edge="1" parent="1" source="choice" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;" target="in" value="Clock In">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" edge="1" parent="1" source="choice" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;" target="out" value="Clock Out">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e6" edge="1" parent="1" source="choice" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;" target="summary" value="View Summary">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e7" edge="1" parent="1" source="choice" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;" target="exit" value="Exit">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e8" edge="1" parent="1" source="in" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;" target="verify" value="Validate IN">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e9" edge="1" parent="1" source="out" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;" target="verify" value="Validate OUT">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e10" edge="1" parent="1" source="verify" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#dc2626;" target="invalid" value="Invalid">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e11" edge="1" parent="1" source="verify" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;strokeColor=#16a34a;" target="timestamp" value="Valid">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e12" edge="1" parent="1" source="csv" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;dashed=1;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" target="verify" value="Read latest event">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e13" edge="1" parent="1" source="timestamp" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;" target="csv" value="Append timestamped event">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e14" edge="1" parent="1" source="summary" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;" target="csv" value="Read log / write totals">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e15" edge="1" parent="1" source="csv" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;" target="show" value="Computed summary">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e16" edge="1" parent="1" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;dashed=1;exitX=0;exitY=0.5;entryX=0;entryY=0.5;" value="Return to menu">
+          <mxGeometry relative="1" x="-0.4094" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="53" y="962" />
+              <mxPoint x="53" y="387" />
+            </Array>
+            <mxPoint x="107" y="962" as="sourcePoint" />
+            <mxPoint x="572" y="387" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e17" edge="1" parent="1" source="timestamp" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;dashed=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;" target="menu" value="">
+          <mxGeometry relative="1" x="0.0556" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="572" y="1157" />
+              <mxPoint x="1462" y="1157" />
+              <mxPoint x="1462" y="327" />
+              <mxPoint x="762" y="327" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="e18" edge="1" parent="1" style="endArrow=block;html=1;edgeStyle=orthogonalEdgeStyle;rounded=1;dashed=1;exitX=1;exitY=0.5;entryX=1;entryY=0.5;" value="Return to menu">
+          <mxGeometry relative="1" x="-0.16" y="-20" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="1422" y="1077" />
+              <mxPoint x="1422" y="387" />
+            </Array>
+            <mxPoint x="1112" y="1077" as="sourcePoint" />
+            <mxPoint x="922" y="387" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
